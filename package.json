@@ -1,0 +1,13 @@
+{
+  "name": "slate-demo",
+  "version": "1.0.0",
+  "description": "HKS SLATE microeconomics course mini-site demo",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5"
+  }
+}

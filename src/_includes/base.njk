@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | API-303 Microeconomics</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  {% if widget %}
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  {% endif %}
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="/" class="site-title">API-303</a>
+        <div class="site-subtitle">Microeconomics</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        {% set navItems = collections.all | eleventyNavigation %}
+        {% for section in navItems %}
+          {% set isActive = page.url | startsWith(section.url) %}
+          <div class="nav-section{{ ' open' if isActive }}">
+            <button class="nav-section-toggle" aria-expanded="{{ 'true' if isActive else 'false' }}">
+              <span class="toggle-icon"></span>
+              <a href="{{ section.url }}" class="nav-section-link{{ ' active' if page.url == section.url }}">
+                {{ section.title }}
+              </a>
+            </button>
+            {% if section.children.length %}
+            <ul class="nav-children">
+              {% for child in section.children %}
+              <li>
+                <a href="{{ child.url }}" class="{{ 'active' if child.url == page.url }}">
+                  {{ child.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article>
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+        {% if widget %}
+        <div id="widget-container" class="widget-container"></div>
+        {% endif %}
+      </article>
+    </main>
+
+  </div>
+
+  {% if widget %}
+  <script src="/assets/widgets/{{ widget }}.js"></script>
+  {% endif %}
+
+  <script>
+    document.querySelectorAll('.nav-section-toggle').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') return;
+        const section = this.closest('.nav-section');
+        const expanded = section.classList.toggle('open');
+        this.setAttribute('aria-expanded', expanded);
+      });
+    });
+  </script>
+</body>
+</html>
