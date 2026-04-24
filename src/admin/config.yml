@@ -29,7 +29,7 @@ collections:
       - label: Body
         name: body
         widget: markdown
-        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
+        hint: "Use the D3 Widget button in the toolbar to embed an interactive widget anywhere on the page."
 
   - name: part-2
     label: "Part 2: Market Structures"
@@ -49,7 +49,7 @@ collections:
       - label: Body
         name: body
         widget: markdown
-        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
+        hint: "Use the D3 Widget button in the toolbar to embed an interactive widget anywhere on the page."
 
   - name: part-3
     label: "Part 3: Welfare & Policy"
@@ -69,4 +69,23 @@ collections:
       - label: Body
         name: body
         widget: markdown
-        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
+        hint: "Use the D3 Widget button in the toolbar to embed an interactive widget anywhere on the page."
+
+  - name: widgets
+    label: D3 Widgets
+    label_singular: Widget
+    folder: src/assets/widgets
+    create: true
+    extension: js
+    format: body
+    fields:
+      - label: "Widget ID"
+        name: title
+        widget: string
+        hint: "Lowercase, hyphens only — e.g. supply-demand. This becomes the filename and the data-widget value used in pages."
+      - label: JavaScript Code
+        name: body
+        widget: code
+        default_language: javascript
+        allow_language_selection: false
+        output_code_only: true

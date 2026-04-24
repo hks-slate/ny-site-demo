@@ -6,7 +6,42 @@
   <title>Content Manager — API-303</title>
 </head>
 <body>
+  <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    fetch('/assets/widget-index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(widgets) {
+        CMS.registerEditorComponent({
+          id: 'd3-widget',
+          label: 'D3 Widget',
+          fields: [
+            {
+              name: 'type',
+              label: 'Widget',
+              widget: 'select',
+              options: widgets.map(function(w) {
+                return { label: w.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }), value: w };
+              })
+            }
+          ],
+          pattern: /^<div data-widget="([^"]+)"><\/div>$/,
+          fromBlock: function(match) {
+            return { type: match[1] };
+          },
+          toBlock: function(data) {
+            return '<div data-widget="' + data.type + '"></div>';
+          },
+          toPreview: function(data) {
+            return '<div style="padding:32px;border:2px dashed #A51C30;border-radius:8px;text-align:center;color:#A51C30;font-weight:700;font-family:sans-serif">D3 Widget: ' + data.type + '</div>';
+          }
+        });
+        CMS.init();
+      })
+      .catch(function() {
+        CMS.init();
+      });
+  </script>
 </body>
 </html>
