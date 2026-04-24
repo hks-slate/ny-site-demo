@@ -17,7 +17,6 @@ collections:
     folder: src/part-1
     create: true
     slug: "{{slug}}"
-    filter: {field: "eleventyNavigation.parent", value: "Part 1: Foundations"}
     fields:
       - { label: Title, name: title, widget: string }
       - label: Navigation
@@ -43,7 +42,6 @@ collections:
     folder: src/part-2
     create: true
     slug: "{{slug}}"
-    filter: {field: "eleventyNavigation.parent", value: "Part 2: Market Structures"}
     fields:
       - { label: Title, name: title, widget: string }
       - label: Navigation
@@ -69,7 +67,6 @@ collections:
     folder: src/part-3
     create: true
     slug: "{{slug}}"
-    filter: {field: "eleventyNavigation.parent", value: "Part 3: Welfare & Policy"}
     fields:
       - { label: Title, name: title, widget: string }
       - label: Navigation
