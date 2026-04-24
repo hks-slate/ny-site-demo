@@ -1,6 +1,5 @@
 ---
 title: Supply & Demand
-widget: supply-demand
 eleventyNavigation:
   key: Supply & Demand
   parent: "Part 1: Foundations"
@@ -34,3 +33,5 @@ The supply curve shows the relationship between price and quantity supplied. It 
 Markets clear where supply equals demand. At the equilibrium price, the quantity consumers wish to buy exactly equals the quantity producers wish to sell.
 
 > Use the interactive widget below to explore how a demand shift affects the equilibrium price and quantity.
+
+<div data-widget="supply-demand"></div>

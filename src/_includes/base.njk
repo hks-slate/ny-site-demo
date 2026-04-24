@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | API-303 Microeconomics</title>
   <link rel="stylesheet" href="/assets/style.css">
-  {% if widget %}
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  {% endif %}
 </head>
 <body>
   <div class="layout">
@@ -49,17 +46,14 @@
       <article>
         <h1>{{ title }}</h1>
         {{ content | safe }}
-        {% if widget %}
-        <div id="widget-container" class="widget-container"></div>
-        {% endif %}
       </article>
     </main>
 
   </div>
 
-  {% if widget %}
-  <script src="/assets/widgets/{{ widget }}.js"></script>
-  {% endif %}
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="/assets/widgets/supply-demand.js"></script>
+  <script src="/assets/widgets.js"></script>
 
   <script>
     document.querySelectorAll('.nav-section-toggle').forEach(btn => {

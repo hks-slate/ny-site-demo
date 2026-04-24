@@ -26,15 +26,10 @@ collections:
           - { label: "Nav Label", name: key, widget: string, hint: "Text shown in the sidebar" }
           - { label: Section, name: parent, widget: hidden, default: "Part 1: Foundations" }
           - { label: Order, name: order, widget: number, default: 99 }
-      - label: D3 Widget
-        name: widget
-        widget: select
-        required: false
-        hint: "Attach a pre-built interactive widget to this page"
-        options:
-          - { label: None, value: "" }
-          - { label: Supply & Demand Curve, value: supply-demand }
-      - { label: Body, name: body, widget: markdown }
+      - label: Body
+        name: body
+        widget: markdown
+        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
 
   - name: part-2
     label: "Part 2: Market Structures"
@@ -51,15 +46,10 @@ collections:
           - { label: "Nav Label", name: key, widget: string }
           - { label: Section, name: parent, widget: hidden, default: "Part 2: Market Structures" }
           - { label: Order, name: order, widget: number, default: 99 }
-      - label: D3 Widget
-        name: widget
-        widget: select
-        required: false
-        hint: "Attach a pre-built interactive widget to this page"
-        options:
-          - { label: None, value: "" }
-          - { label: Supply & Demand Curve, value: supply-demand }
-      - { label: Body, name: body, widget: markdown }
+      - label: Body
+        name: body
+        widget: markdown
+        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
 
   - name: part-3
     label: "Part 3: Welfare & Policy"
@@ -76,12 +66,7 @@ collections:
           - { label: "Nav Label", name: key, widget: string }
           - { label: Section, name: parent, widget: hidden, default: "Part 3: Welfare & Policy" }
           - { label: Order, name: order, widget: number, default: 99 }
-      - label: D3 Widget
-        name: widget
-        widget: select
-        required: false
-        hint: "Attach a pre-built interactive widget to this page"
-        options:
-          - { label: None, value: "" }
-          - { label: Supply & Demand Curve, value: supply-demand }
-      - { label: Body, name: body, widget: markdown }
+      - label: Body
+        name: body
+        widget: markdown
+        hint: "To embed a widget, switch to raw markdown and add: <div data-widget=\"supply-demand\"></div>"
